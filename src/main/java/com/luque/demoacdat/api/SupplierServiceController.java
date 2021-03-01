@@ -5,14 +5,18 @@ import com.luque.demoacdat.model.Product;
 import com.luque.demoacdat.model.Supplier;
 import com.luque.demoacdat.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.validation.Valid;
 import java.util.List;
 
+@SpringBootApplication
+@EnableSwagger2
 @RestController
 @RequestMapping("/supplier")
 public class SupplierServiceController {

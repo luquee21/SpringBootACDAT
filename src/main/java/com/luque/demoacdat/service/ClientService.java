@@ -44,7 +44,7 @@ public class ClientService {
             Optional<Client> clients = repository.findById(client.getId());
             if (clients.isPresent()) {
                 Client clientt = clients.get();
-                clientt.setClients(client.getClients());
+                clientt.setProducts(client.getProducts());
                 clientt.setAddress(client.getAddress());
                 clientt.setName(client.getName());
                 clientt.setPhone(client.getPhone());

@@ -22,9 +22,6 @@ public class Supplier {
     @Column(name = "code", nullable = false)
     private String code;
 
-    @Column(name = "price", nullable = false)
-    private String price;
-
     @Column(name = "description", nullable = false)
     private String description;
 
@@ -56,13 +53,6 @@ public class Supplier {
         this.name = name;
     }
 
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
 
     public String getDescription() {
         return description;

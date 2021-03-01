@@ -19,6 +19,9 @@ public class Product {
     @Column(name = "code", nullable = false)
     private String code;
 
+    @Column(name = "name", nullable = false)
+    private String name;
+
     @Column(name = "price", nullable = false)
     private float price;
 
@@ -27,7 +30,7 @@ public class Product {
 
     @JsonIgnoreProperties(value = {"product"}, allowSetters = true)
     @OneToMany(mappedBy = "product", cascade = {CascadeType.MERGE})
-    private List<Client_Product> products = new ArrayList<>();
+    private List<Client_Product> clients = new ArrayList<>();
 
     @JsonIgnoreProperties(value = {"products"}, allowSetters = true)
     @ManyToOne(cascade = {CascadeType.MERGE})
@@ -67,15 +70,23 @@ public class Product {
         this.description = description;
     }
 
-    public List<Client_Product> getProducts() {
-        return products;
+    public List<Client_Product> getClients() {
+        return clients;
     }
 
-    public void setProducts(List<Client_Product> products) {
-        this.products = products;
-        for (Client_Product c : products) {
+    public void setClients(List<Client_Product> clients) {
+        this.clients = clients;
+        for (Client_Product c : clients) {
             c.setProduct(this);
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Supplier getSupplier() {

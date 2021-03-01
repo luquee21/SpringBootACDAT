@@ -6,15 +6,18 @@ import com.luque.demoacdat.model.Client_Product;
 import com.luque.demoacdat.model.Product;
 import com.luque.demoacdat.service.Client_ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.validation.Valid;
 import java.util.List;
 
-
+@SpringBootApplication
+@EnableSwagger2
 @RestController
 @RequestMapping("/client_product")
 public class Client_ProductServiceController {
@@ -47,9 +50,9 @@ public class Client_ProductServiceController {
     }
 
     @GetMapping("/date/{date}")
-    public ResponseEntity<List<Product>> getProductsByDate(@PathVariable("date") String date) {
-        List<Product> products = service.getProductsByDate(date);
-        return new ResponseEntity<List<Product>>(products, new HttpHeaders(), HttpStatus.OK);
+    public ResponseEntity<List<Client_Product>> getPurchasedByDate(@PathVariable("date") String date) {
+        List<Client_Product> products = service.getPurchasedByDate(date);
+        return new ResponseEntity<List<Client_Product>>(products, new HttpHeaders(), HttpStatus.OK);
     }
 
     @GetMapping("/client/total_purchased_products/{id}")

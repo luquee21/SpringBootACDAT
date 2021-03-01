@@ -47,7 +47,7 @@ public class Client_Product {
 
     public void setClient(Client client) {
         this.client = client;
-        List<Client_Product> clients = this.client.getClients();
+        List<Client_Product> clients = this.client.getProducts();
         if (clients == null) {
             clients = new ArrayList<>();
         }
@@ -62,7 +62,7 @@ public class Client_Product {
 
     public void setProduct(Product product) {
         this.product = product;
-        List<Client_Product> products = this.product.getProducts();
+        List<Client_Product> products = this.product.getClients();
         if (products == null) {
             products = new ArrayList<>();
         }

@@ -46,10 +46,11 @@ public class ProductService {
             if (products.isPresent()) {
                 Product productt = products.get();
                 productt.setSupplier(product.getSupplier());
-                productt.setProducts(product.getProducts());
-                product.setCode(product.getCode());
-                product.setPrice(product.getPrice());
-                product.setDescription(product.getDescription());
+                productt.setClients(product.getClients());
+                productt.setCode(product.getCode());
+                productt.setPrice(product.getPrice());
+                productt.setDescription(product.getDescription());
+                productt.setName(product.getName());
                 productt = repository.save(productt);
                 return productt;
             } else {

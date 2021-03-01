@@ -30,7 +30,7 @@ public class Client {
 
     @JsonIgnoreProperties(value = {"client"}, allowSetters = true)
     @OneToMany(mappedBy = "client", cascade = {CascadeType.MERGE})
-    private List<Client_Product> clients = new ArrayList<>();
+    private List<Client_Product> products = new ArrayList<>();
 
 
     public Long getId() {
@@ -73,13 +73,13 @@ public class Client {
         this.phone = phone;
     }
 
-    public List<Client_Product> getClients() {
-        return clients;
+    public List<Client_Product> getProducts() {
+        return products;
     }
 
-    public void setClients(List<Client_Product> clients) {
-        this.clients = clients;
-        for (Client_Product c : clients) {
+    public void setProducts(List<Client_Product> products) {
+        this.products = products;
+        for (Client_Product c : products) {
             c.setClient(this);
         }
     }

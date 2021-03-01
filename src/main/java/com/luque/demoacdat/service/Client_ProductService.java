@@ -53,9 +53,9 @@ public class Client_ProductService {
         }
     }
 
-    public List<Product> getProductsByDate(String date) {
+    public List<Client_Product> getPurchasedByDate(String date) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
-        List<Product> products = repository.getProductsByDate(formatter.format(date));
+        List<Client_Product> products = repository.getProductsByDate(formatter.format(date));
         if (products.size() > 0) {
             return products;
         } else {

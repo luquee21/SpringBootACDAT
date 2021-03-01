@@ -27,7 +27,7 @@ public interface Client_ProductRepository extends JpaRepository<Client_Product, 
     @Query(value = "SELECT * FROM product as p" +
             " INNER JOIN client_product as cp ON cp.id = p.id" +
             " WHERE p.date_purchase = ?1", nativeQuery = true)
-    List<Product> getProductsByDate(String date);
+    List<Client_Product> getProductsByDate(String date);
 
     @Query(value = "SELECT SUM(amount) FROM client_product WHERE id_client = ?1", nativeQuery = true)
     int getTotalPurchasedProductsOfClient(Long id);

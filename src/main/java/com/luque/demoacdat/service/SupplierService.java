@@ -45,7 +45,6 @@ public class SupplierService {
             Optional<Supplier> suppliers = repository.findById(supplier.getId());
             if (suppliers.isPresent()) {
                 Supplier supplierr = suppliers.get();
-                supplierr.setPrice(supplier.getPrice());
                 supplierr.setCode(supplier.getCode());
                 supplierr.setDescription(supplier.getDescription());
                 supplierr.setProducts(supplier.getProducts());
