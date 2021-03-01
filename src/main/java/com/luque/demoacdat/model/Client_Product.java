@@ -17,12 +17,12 @@ public class Client_Product {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
 
-    @JsonIgnoreProperties(value = {"clients"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"products"}, allowSetters = true)
     @ManyToOne(cascade = {CascadeType.MERGE}, optional = false)
     @JoinColumn(name = "id_client")
     private Client client;
 
-    @JsonIgnoreProperties(value = {"products"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"clients"}, allowSetters = true)
     @ManyToOne(cascade = {CascadeType.MERGE}, optional = false)
     @JoinColumn(name = "id_product")
     private Product product;
